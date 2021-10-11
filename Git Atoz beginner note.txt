@@ -1,0 +1,183 @@
+Create a new repository in your official GIT Hub account https://github.com/ 
+
+that is inside your GIT Login Dashboard --> Repositories --> new --> Create Repository and run all the corresponding commands into your terminal -  By completion of which you would have created a repository.
+
+
+Now create a new folder where you want to experiment the git exercise and open that folder in terminal. 
+
+Now we need to clone the repository that we created in our github account into the local folder we have created.
+
+for that : git clone <URL> .      [" . " is used as to mention that to clone into this directory ]"
+
+now the repository would have reflected inside your folder.
+
+
+
+now here in the same folder you can create a python program : touch <filename>.py
+
+and once you have written your initial set of code, save it. 
+
+you can check it once by running the program : python3 <filename>.py
+
+
+
+now give: git status
+
+you will see that the new python program being un-tracked.
+
+
+
+So to get it into git & track : git add <filename.py> or if you have created multiple files and would want to add everything you can give the command : git add - A
+
+[ The following note is an Additional Info, You can skip the notes part and continue if you wish!
+
+Note1: at the same time if you want certain files to not be tracked by git then you need to create a git-ignore file : touch .gitignore 
+
+- and then you need to move the files into the .gitignore that is : mv <filenames> .gitignore
+
+Note2: The same way when you have the added the files through the add command and now you feel that you dont want the added file to be tracked and you want to get that file back you can give : git reset <filename.extension> ]
+
+
+
+Now with the above Add command you have staged the files , but we need to commit to get the GIT start tracking , but before commiting if you would like to see the preview of the added files give : git status
+
+
+
+Hence proceeding to Commit : git commit -m "<Give a detailed description on what change you are doing at this particular segment> "  
+
+
+
+Check the status : git status [by checking the status you will see the notification that there is nothing to commit and the tree is clean] and also you check it through the log : git log [where you can view the track of your repository and file evolving]
+
+
+
+As of now we have all the updation in the local repo so to make it reflect in the Github account that is the Remote-Public repo, we need to push it to the Github Remote-Public repo existing main branch!
+
+But before Pushing we need to Pull the official github repo for the complete updated official version and then push the Local commits into it so that it gets completely updated - this helps when multiple users access the offical github repo working and updating.
+
+
+
+Hence,
+
+we need to pull first : git pull origin main [here origin is the remote local repo and main is the github offical master branch ] 
+
+Giving notification if "its up to date"
+
+
+
+And then now to push : git push origin main [By Now we have pushed our local repo into the official github account!! you can login refresh your repo and check in the official github account !!] 
+
+
+
+Also you can give : git status [you will see the notification that your origin/main branch is uptodate]
+
+
+
+Now The Real Fun Starts !! Experiencing GIT 
+
+
+
+Open your python file --> make a change --> save it --> compile and check for your out put 
+
+therefore, now your python file is modified!
+
+
+
+How are we going to push the modifications into our repository?
+
+
+
+Here we go, 
+
+For us to view the differences that we made from the previous version : git diff <filename> or just git diff
+
+we could see the differences ! whatever we have added newly - highlighted in green and the lines removed in - red.
+
+having it reviewed --> now we need to add and commit : 
+
+ git add -A
+
+ git commit -m "<give the description of changes made>"
+
+Now Again to have them reflect in our public repo that is the official github account repo - we need to Pull first and then Push 
+
+git pull origin main
+
+git push origin main 
+
+The changes would have been reflected into our official github account - you can refresh and check it ! 
+
+
+
+Creating a Branch and working-out the code:
+
+Branching is nothing but instead of directly working on the original master file, we can create a branch from the master version and then develop further- having the master version undisturbed!
+
+To create a branch,
+
+git branch <branch name>
+
+To see the overall branches available just: git branch
+
+[this will list all the branches] // as of now we would have our main branch and the branch that we created! you can create multiple branches as well!
+
+Though we have created the branch, we are still inside the main branch ,
+To switch into the branch we created : git checkout <branch name>
+
+If you rerun the : git branch [on the list of branches , you can view that you have switched to your new branch]
+
+ 
+
+Now go to your python file and develop your additional code and save it , once return to terminal and check : git status 
+
+we could see that our new modification has to be updated for which we need to follow the above same steps
+
+git add -A 
+
+git commit -m "description"
+
+and 
+
+To get them reflected in our Github account
+
+git push -u origin <branch name> [-u indicates git to reflect the local repo into the newbranch at the GIT hub public repo]
+
+you can now refresh and check the official GIT Hub account and your new branch with your new developed/modified code file will be reflected
+
+
+
+Merging the New Branch with the Main Branch :
+
+
+
+- Switch to the main branch : git checkout main
+
+- we need to pull the updated version : git pull origin main
+
+- merging the newbrach with the main branch : git merge <branch name>
+
+- As we have merged now, we need to push this updated main branch into our public github repo : git push origin main 
+
+you can refresh and check the Github account the main branch would have merged!!
+
+
+
+Deleting the Additional Branch Created :
+
+
+
+git branch -d <branch name> to delete in our local repo
+
+git push origin --delete <branch name> to delete in our Github public repo !
+
+
+you can refresh and check the Github account the new branch that we added would have been deleted.
+
+
+
+Progress:  
+
+- We've understood the overall working of GIT as a Version control system - As we did not create new version of file instead we were working on the very same file.
+
+- We've got an Hands-on Experience as much of running a complete git cycle.
+
